@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>arcgis.gis.mission module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.gis.mission module &mdash; arcgis 2.0.0 documentation</title>
   
 
   
@@ -19,7 +20,10 @@
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
+
   
+  
+
   
 
   
@@ -33,7 +37,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -41,7 +44,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="arcgis.gis.nb module" href="arcgis.gis.nb.html" />
-    <link rel="prev" title="arcgis.gis.server module" href="arcgis.gis.server.html" />
+    <link rel="prev" title="arcgis.gis.agoserver module" href="arcgis.gis.agoserver.html" />
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
 <!-- The point of this code block is to send us google analytics on website views -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -64,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+            <a href="index.html" class="icon icon-home"> arcgis
           
 
           
@@ -77,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                2.0.0
               </div>
             
           
@@ -102,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+              <p><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -121,6 +124,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastoremanager">DatastoreManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#rolemanager">RoleManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#resourcemanager">ResourceManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikeymanager">APIKeyManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikey">APIKey</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#profilemanager">ProfileManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#invitationmanager">InvitationManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#certificatemanager">CertificateManager</a></li>
@@ -128,8 +133,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.gis.toc.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.agoserver.html">arcgis.gis.agoserver module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.gis.mission module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#missionserver">MissionServer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mission">Mission</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#missioncatalog">MissionCatalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#missionjob">MissionJob</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#directorymanager">DirectoryManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#logmanager">LogManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#machine">Machine</a></li>
@@ -142,6 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.workflowmanager.html">arcgis.gis.workflowmanager module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.tasks.html">arcgis.gis.tasks module</a></li>
 </ul>
 </li>
@@ -161,7 +171,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
 </ul>
 
             
@@ -202,6 +213,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -215,7 +228,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -232,9 +245,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="section" id="module-arcgis.gis.mission">
+  <section id="module-arcgis.gis.mission">
 <span id="arcgis-gis-mission-module"></span><h1>arcgis.gis.mission module<a class="headerlink" href="#module-arcgis.gis.mission" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="missionserver">
+<section id="missionserver">
 <h2>MissionServer<a class="headerlink" href="#missionserver" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.mission.MissionServer">
@@ -300,8 +313,222 @@ settings.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="directorymanager">
+</section>
+<section id="mission">
+<h2>Mission<a class="headerlink" href="#mission" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.mission.Mission">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.mission.</code><code class="sig-name descname">Mission</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n">GIS</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission.Mission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A single registered <cite>Mission</cite> on the Enterprise.</p>
+<dl class="py method">
+<dt id="arcgis.gis.mission.Mission.add_report">
+<code class="sig-name descname">add_report</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">description</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tags</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">questions</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">display_field</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">drawing_info</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">locale</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'en'</span></em>, <em class="sig-param"><span class="n">share_as_template</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#arcgis.gis.mission.Mission.add_report" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 93%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Required String. The name of the report.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional String. A description of the report.</p></td>
+</tr>
+<tr class="row-even"><td><p>tags</p></td>
+<td><p>Optional. A comma-separated list of strings. Used to add tags to the report.</p></td>
+</tr>
+<tr class="row-odd"><td><p>questions</p></td>
+<td><p>Optional Dict. A dictionary containing questions and their fields. If an empty array is passed, the request is rejected. Used to represent the desired questions and their fields. Question types are based on Survey123 question type fields.
+Available question types: Single Line Text, Single Choice, Number,
+Image, Multiline Text, Dropdown, Multiple Choice, and Date/Time.
+See <a class="reference external" href="https://doc.arcgis.com/en/survey123/browser/create-surveys/quickreferencecreatesurveys.htm#GUID-2D96112F-85B1-4C41-9C6F-A85BB6026A51">https://doc.arcgis.com/en/survey123/browser/create-surveys/quickreferencecreatesurveys.htm#GUID-2D96112F-85B1-4C41-9C6F-A85BB6026A51</a> for details.</p></td>
+</tr>
+<tr class="row-even"><td><p>display_field</p></td>
+<td><p>Optional String. The name of the report feature layer’s display field. Normally this is the field name of one of the report questions. If absent, the report feature layer’s display field will be the first question’s field name.</p></td>
+</tr>
+<tr class="row-odd"><td><p>drawing_info</p></td>
+<td><p>Optional. JSON Object. Defines the report feature layer’s drawing info, including a feature renderer.
+See: <a class="reference external" href="https://developers.arcgis.com/documentation/common-data-types/drawinginfo.htm">https://developers.arcgis.com/documentation/common-data-types/drawinginfo.htm</a></p></td>
+</tr>
+<tr class="row-even"><td><p>locale</p></td>
+<td><p>Optional. String. The locale used to generate the report. Must be a valid IETF BCP 47 language tag. Defaults to en</p></td>
+</tr>
+<tr class="row-odd"><td><p>share_as_template</p></td>
+<td><p>Optional Boolean. Shares the report as a template.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission.Mission.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.gis.mission.Mission.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a <cite>Mission</cite> from the server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.gis.mission.Mission.properties">
+<code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.mission.Mission.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission.Mission.reports">
+<em class="property">property </em><code class="sig-name descname">reports</code><a class="headerlink" href="#arcgis.gis.mission.Mission.reports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a List of Mission Report Items associated with the <cite>Mission</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List[Item]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="missioncatalog">
+<h2>MissionCatalog<a class="headerlink" href="#missioncatalog" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.mission.MissionCatalog">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.mission.</code><code class="sig-name descname">MissionCatalog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n">GIS</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission.MissionCatalog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The ArcGIS Mission Server catalog.</p>
+<dl class="py method">
+<dt id="arcgis.gis.mission.MissionCatalog.admin">
+<code class="sig-name descname">admin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission.MissionCatalog.admin" title="Permalink to this definition">¶</a></dt>
+<dd><p>provides a connection to the administrative API of Mission Server Produce</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission.MissionCatalog.create_mission">
+<code class="sig-name descname">create_mission</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">snippet</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">description</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">license_info</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tags</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extent</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">template_item</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item">arcgis.gis.Item</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">locale</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'en'</span></em>, <em class="sig-param"><span class="n">base_map</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">wm_description</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">webmap_id</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item">arcgis.gis.Item</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; arcgis.gis.mission.api.MissionJob<a class="headerlink" href="#arcgis.gis.mission.MissionCatalog.create_mission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new <cite>Mission</cite> on the enterprise.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Required. String. The title of the mission. This is the human readable title that is displayed to users.</p></td>
+</tr>
+<tr class="row-odd"><td><p>snippet</p></td>
+<td><p>Optional String. A short summary description of the item.</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Optional String. Mission description.</p></td>
+</tr>
+<tr class="row-odd"><td><p>license_info</p></td>
+<td><p>Optional String. Any license information or restrictions.</p></td>
+</tr>
+<tr class="row-even"><td><p>tags</p></td>
+<td><p>Optional. Comma-separated list of strings used to tag the mission.
+Format: tag1,tag2,…,tagN</p></td>
+</tr>
+<tr class="row-odd"><td><p>extent</p></td>
+<td><p>Optional String. Comma-separated list that defines the bounding
+rectangle of the mission. Should always be in WGS84. The
+default is -180, -90, 180, 90.</p>
+<p><strong>Format: &lt;xmin&gt;, &lt;ymin&gt;, &lt;xmax&gt;, &lt;ymax&gt;</strong></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>webmap_id</p></td>
+<td><p>Optional String. The portal item id of the web map to use as a template for the mission.</p></td>
+</tr>
+<tr class="row-odd"><td><p>locale</p></td>
+<td><p>Optional String. The locale in which to generate Mission assets with. Must be a valid IETF BCP 47 language tag. Defaults to en</p></td>
+</tr>
+<tr class="row-even"><td><p>base_map</p></td>
+<td><p>Optional JSON Object. The basemap to add to the mission.
+See: <a class="reference external" href="https://developers.arcgis.com/documentation/common-data-types/basemap.htm">https://developers.arcgis.com/documentation/common-data-types/basemap.htm</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>wm_description</p></td>
+<td><p>Optional string. The description of the web map added to the mission.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>MissionJob</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission.MissionCatalog.jobs">
+<em class="property">property </em><code class="sig-name descname">jobs</code><a class="headerlink" href="#arcgis.gis.mission.MissionCatalog.jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of jobs on the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission.MissionCatalog.missions">
+<em class="property">property </em><code class="sig-name descname">missions</code><a class="headerlink" href="#arcgis.gis.mission.MissionCatalog.missions" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of missions on the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.gis.mission.MissionCatalog.properties">
+<code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.mission.MissionCatalog.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="missionjob">
+<h2>MissionJob<a class="headerlink" href="#missionjob" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.mission.MissionJob">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.mission.</code><code class="sig-name descname">MissionJob</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n">GIS</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission.MissionJob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a Single <cite>Job</cite> operation for Mission Server</p>
+<dl class="py attribute">
+<dt id="arcgis.gis.mission.MissionJob.properties">
+<code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.mission.MissionJob.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission.MissionJob.result">
+<code class="sig-name descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; arcgis.gis.mission.api.Mission<a class="headerlink" href="#arcgis.gis.mission.MissionJob.result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the results of the process</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission.MissionJob.status">
+<em class="property">property </em><code class="sig-name descname">status</code><a class="headerlink" href="#arcgis.gis.mission.MissionJob.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the status</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="directorymanager">
 <h2>DirectoryManager<a class="headerlink" href="#directorymanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.mission._system.DirectoryManager">
@@ -386,8 +613,8 @@ Mission Server site.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="logmanager">
+</section>
+<section id="logmanager">
 <h2>LogManager<a class="headerlink" href="#logmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.mission._logs.LogManager">
@@ -404,7 +631,7 @@ up disk space. However, it is not required that you invoke this operation becaus
 the server periodically purges old logs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>boolean</p>
+<dd class="field-odd"><p>Boolean. True if successful else False.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -494,6 +721,20 @@ output log file path is returned.</p>
 <dt id="arcgis.gis.mission._logs.LogManager.settings">
 <em class="property">property </em><code class="sig-name descname">settings</code><a class="headerlink" href="#arcgis.gis.mission._logs.LogManager.settings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get/set the current log settings.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>dict. A dictionary with the key/values pairs to modify settings.</p></td>
+</tr>
+</tbody>
+</table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>PropertyMap</p>
@@ -503,8 +744,8 @@ output log file path is returned.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="machine">
+</section>
+<section id="machine">
 <h2>Machine<a class="headerlink" href="#machine" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.mission._machines.Machine">
@@ -802,7 +1043,12 @@ CA or specific intermediate certificates.</p>
 <dl class="py method">
 <dt id="arcgis.gis.mission._machines.Machine.properties">
 <em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.mission._machines.Machine.properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns the properties of the resource</p>
+<dd><p>Get/Set the properties of the resource</p>
+<p>Set operation allows you to update properties on the ArcGIS
+Mission Server machine.</p>
+<p>ArcGIS Mission Server uses port 11443 for communication. When you
+create a site, this is assigned as the default. You must ensure that
+your firewall allows communication through port 11443.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -866,8 +1112,8 @@ or join an existing site.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="machinemanager">
+</section>
+<section id="machinemanager">
 <h2>MachineManager<a class="headerlink" href="#machinemanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.mission._machines.MachineManager">
@@ -888,8 +1134,8 @@ Server machine in the site.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="securitymanager">
+</section>
+<section id="securitymanager">
 <h2>SecurityManager<a class="headerlink" href="#securitymanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.mission._security.SecurityManager">
@@ -1001,11 +1247,11 @@ When you initially create your ArcGIS Server site, all communication in the site
 
 </dd></dl>
 
-</div>
-<div class="section" id="sitemanager">
+</section>
+<section id="sitemanager">
 <h2>SiteManager<a class="headerlink" href="#sitemanager" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="systemmanager">
+</section>
+<section id="systemmanager">
 <h2>SystemManager<a class="headerlink" href="#systemmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.mission._system.SystemManager">
@@ -1080,8 +1326,8 @@ objects and extensions through the server environment interface.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="webadaptor">
+</section>
+<section id="webadaptor">
 <h2>WebAdaptor<a class="headerlink" href="#webadaptor" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.mission._system.WebAdaptor">
@@ -1111,13 +1357,13 @@ site’s webSocketMaxHeapSize property.</p>
 <dt id="arcgis.gis.mission._system.WebAdaptor.unregister">
 <code class="sig-name descname">unregister</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._system.WebAdaptor.unregister" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unregisters a WebAdapter for the Mission Server
-:returns: boolean</p>
+:return: boolean</p>
 </dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="webadaptormanager">
+</section>
+<section id="webadaptormanager">
 <h2>WebAdaptorManager<a class="headerlink" href="#webadaptormanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.mission._system.WebAdaptorManager">
@@ -1192,8 +1438,8 @@ incoming requests to the server.</p>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
 
@@ -1201,37 +1447,29 @@ incoming requests to the server.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="arcgis.gis.nb.html" class="btn btn-neutral float-right" title="arcgis.gis.nb module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="arcgis.gis.server.html" class="btn btn-neutral float-left" title="arcgis.gis.server module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="arcgis.gis.nb.html" class="btn btn-neutral float-right" title="arcgis.gis.nb module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.gis.agoserver.html" class="btn btn-neutral float-left" title="arcgis.gis.agoserver module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2016-2019, Esri
+        &#169; Copyright 2016-2022, Esri.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -1239,6 +1477,154 @@ incoming requests to the server.</p>
 
   </div>
   
+    Options v: 2.0.0
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 2.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {

@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>arcgis.gis.tasks module &mdash; arcgis 1.8.2 documentation</title>
+  <title>arcgis.gis.tasks module &mdash; arcgis 2.0.0 documentation</title>
   
 
   
@@ -19,7 +20,10 @@
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
+
   
+  
+
   
 
   
@@ -33,7 +37,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -41,7 +44,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="arcgis.env module" href="arcgis.env.html" />
-    <link rel="prev" title="arcgis.gis.nb module" href="arcgis.gis.nb.html" />
+    <link rel="prev" title="arcgis.gis.workflowmanager module" href="arcgis.gis.workflowmanager.html" />
 <!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
 <!-- The point of this code block is to send us google analytics on website views -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -64,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+            <a href="index.html" class="icon icon-home"> arcgis
           
 
           
@@ -77,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.2
+                2.0.0
               </div>
             
           
@@ -102,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+              <p><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -121,6 +124,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastoremanager">DatastoreManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#rolemanager">RoleManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#resourcemanager">ResourceManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikeymanager">APIKeyManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikey">APIKey</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#profilemanager">ProfileManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#invitationmanager">InvitationManager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#certificatemanager">CertificateManager</a></li>
@@ -128,8 +133,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.gis.toc.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.agoserver.html">arcgis.gis.agoserver module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.workflowmanager.html">arcgis.gis.workflowmanager module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.gis.tasks module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#taskmanager">TaskManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#task">Task</a></li>
@@ -154,7 +161,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
 </ul>
 
             
@@ -195,6 +203,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -208,7 +218,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -225,9 +235,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="section" id="arcgis-gis-tasks-module">
+  <section id="arcgis-gis-tasks-module">
 <h1>arcgis.gis.tasks module<a class="headerlink" href="#arcgis-gis-tasks-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-arcgis.gis.tasks"></span><div class="section" id="taskmanager">
+<span class="target" id="module-arcgis.gis.tasks"></span><section id="taskmanager">
 <h2>TaskManager<a class="headerlink" href="#taskmanager" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.tasks.TaskManager">
@@ -295,9 +305,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </td>
 </tr>
 <tr class="row-even"><td><p>task_type</p></td>
-<td><p>Required String. The platform to execute the notebook on.  For
-notebook server tasks use: <cite>ExecuteNotebook</cite>, for Insights notebook
-use: <cite>UpdateInsightsWorkbook</cite>.</p></td>
+<td><p>Required String. The type of task, either executing a notebook or
+updating an Insights workbook, that will be executed against the
+specified item.  For notebook server tasks use: <cite>ExecuteNotebook</cite>,
+for Insights notebook use: <cite>UpdateInsightsWorkbook</cite>. Use
+<cite>ExecuteSceneCook</cite> to cook scene tiles. Use <cite>ExecuteWorkflowManager</cite>
+to run workflow manager tasks.</p></td>
 </tr>
 <tr class="row-odd"><td><p>occurences</p></td>
 <td><p>Optional Integer. The total number of instance that can run at a single time.</p></td>
@@ -313,7 +326,18 @@ use: <cite>UpdateInsightsWorkbook</cite>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>parameters</p></td>
 <td><p>Optional Dict. Optional collection of Key/Values that will be given
-to the notebook.</p></td>
+to the task.  The dictionary will be added to the task run
+request. This parameter is required for <cite>ExecuteSceneCook</cite> tasks.</p>
+<p>Example</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>`
+{</p>
+<blockquote>
+<div><p>“service_url”: &lt;scene service URL&gt;,
+“num_of_caching_service_instances”: 2, //2 instances are required
+“layer”: “{&lt;list of scene layers to cook&gt;}”, //The default is all layers
+“update_mode”: “PARTIAL_UPDATE_NODES”</p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
@@ -358,8 +382,8 @@ to the notebook.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="task">
+</section>
+<section id="task">
 <h2>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.tasks.Task">
@@ -507,8 +531,8 @@ If False, the task is set active to False.</p></td>
 
 </dd></dl>
 
-</div>
-<div class="section" id="run">
+</section>
+<section id="run">
 <h2>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="arcgis.gis.tasks.Run">
@@ -575,8 +599,8 @@ current <cite>Run</cite>.</p></td>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
 
@@ -584,37 +608,29 @@ current <cite>Run</cite>.</p></td>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="arcgis.env.html" class="btn btn-neutral float-right" title="arcgis.env module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="arcgis.gis.nb.html" class="btn btn-neutral float-left" title="arcgis.gis.nb module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="arcgis.env.html" class="btn btn-neutral float-right" title="arcgis.env module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.gis.workflowmanager.html" class="btn btn-neutral float-left" title="arcgis.gis.workflowmanager module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2016-2019, Esri
+        &#169; Copyright 2016-2022, Esri.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -622,6 +638,154 @@ current <cite>Run</cite>.</p></td>
 
   </div>
   
+    Options v: 2.0.0
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 2.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
 
   <script type="text/javascript">
       jQuery(function () {
